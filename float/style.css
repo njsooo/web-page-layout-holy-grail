@@ -1,0 +1,174 @@
+/* COMMONS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  color: #fff;
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+
+/* HEADER */
+header {
+  height: 100px;
+  background-color: #999;
+  line-height: 100px;
+}
+
+header h1 {
+  float: left;
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+
+/* HEADER NAV */
+header nav ul {
+  list-style: none;
+}
+
+header nav ul:first-child {
+  float: left;
+  margin-left: 1.5rem;
+}
+
+header nav ul:last-child {
+  float: right;
+  margin-right: 1.5rem;
+}
+
+header nav ul li {
+  display: inline-block;
+}
+
+header nav ul li a {
+  /* Prevent ul, li tag from overflow height */
+  vertical-align: top;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+/* FOOTER */
+footer {
+  height: 100px;
+  background-color: #999;
+  line-height: 100px;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: 2rem;
+}
+
+/* MAIN */
+.main {
+  position: relative;
+}
+
+.main > * {
+  padding: 1rem;
+}
+
+.main h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+/* MAIN NAV */
+.main nav {
+  float: left;
+  width: 250px;
+  height: 800px;
+  background-color: salmon;
+}
+
+.main nav ul {
+  margin-left: 1.25rem;
+}
+
+.main nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* MAIN SECTION */
+section {
+  overflow: hidden;
+  height: 800px;
+  margin-right: 250px;
+  background-color: #444;
+}
+
+/* MAIN ASIDE */
+aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 800px;
+  background-color: royalblue;
+}
+
+aside > div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+  section {
+    margin-right: 0;
+  }
+
+  aside {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: auto;
+    line-height: normal;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  header nav {
+    overflow: hidden;
+  }
+
+  header nav ul {
+    width: 100%;
+    margin: 0 !important;
+    text-align: center;
+  }
+
+  header nav ul:first-child li:first-child {
+    margin-top: 0.5rem;
+  }
+
+  header nav ul li {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  header nav ul li a {
+    padding: 0;
+  }
+
+  .main nav {
+    width: 100%;
+    height: auto;
+  }
+
+  .main section {
+    height: auto;
+  }
+}
