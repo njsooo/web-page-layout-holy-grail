@@ -4,8 +4,8 @@
 Furthermore, made it using flex.
 
 ## DEMO
-- [float]()
-- [flex]()
+- [float](https://nifty-austin-2fc0b0.netlify.app/float/)
+- [flex](https://nifty-austin-2fc0b0.netlify.app/flex/)
 
 ## Screenshots
 
