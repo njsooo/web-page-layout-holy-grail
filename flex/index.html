@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Holy Grail Flex</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Holy Grail Flex</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-      <h1><a href="#">LOGO</a></h1>
-      <nav>
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SERVICES</a></li>
-          <li><a href="#">ABOUT</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">LOGIN</a></li>
-          <li><a href="#">SIGN UP</a></li>
-        </ul>
-      </nav>
+      <div class="container">
+        <h1 class="logo">
+          <a href="#">LOGO</a>
+        </h1>
+
+        <nav class="center-nav">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">ABOUT</a></li>
+          </ul>
+        </nav>
+
+        <nav class="right-nav">
+          <ul>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">SIGN UP</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
+    <!-- // HEADER -->
+
     <main>
-      <nav>
-        <h2>NAV</h2>
+      <nav class="left">
+        <h2 class="title">NAV</h2>
         <ul>
           <li><a href="#">ITEM 1</a></li>
           <li><a href="#">ITEM 2</a></li>
@@ -33,36 +42,50 @@
           <li><a href="#">ITEM 4</a></li>
         </ul>
       </nav>
-      <section>
-        <h2>SECTION</h2>
+      <!-- // MAIN - LEFT -->
+
+      <section class="center">
+        <h2 class="title">SECTION</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas sint, nihil sed tempore doloremque labore
-          exercitationem vero maxime ipsam fugit neque optio facilis id, omnis error atque ad quae ratione obcaecati,
-          eaque possimus facere harum rem unde? Voluptate voluptatibus quaerat corporis officiis qui odio reiciendis,
-          autem rem quam voluptatem veniam cumque, ut incidunt, distinctio consequatur! Ratione officia cumque
-          recusandae nam veniam unde quis ipsum? Numquam maxime a odio ab, ea iste obcaecati, inventore soluta quis
-          corrupti ducimus assumenda, quisquam neque sapiente aliquid ut iusto necessitatibus quibusdam earum velit.
-          Saepe est necessitatibus illo consectetur quidem sunt, ipsam natus error illum laboriosam.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+          sint, nihil sed tempore doloremque labore exercitationem vero maxime
+          ipsam fugit neque optio facilis id, omnis error atque ad quae ratione
+          obcaecati, eaque possimus facere harum rem unde? Voluptate
+          voluptatibus quaerat corporis officiis qui odio reiciendis, autem rem
+          quam voluptatem veniam cumque, ut incidunt, distinctio consequatur!
+          Ratione officia cumque recusandae nam veniam unde quis ipsum? Numquam
+          maxime a odio ab, ea iste obcaecati, inventore soluta quis corrupti
+          ducimus assumenda, quisquam neque sapiente aliquid ut iusto
+          necessitatibus quibusdam earum velit. Saepe est necessitatibus illo
+          consectetur quidem sunt, ipsam natus error illum laboriosam.
         </p>
       </section>
-      <aside>
-        <div>
-          <h2>Advertisement</h2>
+      <!-- // MAIN - CENTER -->
+
+      <aside class="right">
+        <div class="item">
+          <h2 class="title">Advertisement</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, libero.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reiciendis, libero.
           </p>
         </div>
-        <div>
-          <h2>Advertisement</h2>
+
+        <div class="item">
+          <h2 class="title">Advertisement</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, libero.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Reiciendis, libero.
           </p>
         </div>
       </aside>
+      <!-- // MAIN - RIGHT -->
     </main>
+    <!-- // MAIN -->
+
     <footer>
-      <h2>FOOTER</h2>
+      <h2 class="title">FOOTER</h2>
     </footer>
-  </div>
-</body>
+    <!-- // FOOTER -->
+  </body>
 </html>

@@ -3,6 +3,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #fff;
+  font-family: "Arial", sans-serif;
 }
 
 a {
@@ -10,47 +12,44 @@ a {
   text-decoration: none;
 }
 
-.container {
-  color: #fff;
-  font-family: "Arial", "Helvetica", sans-serif;
-}
-
 /* HEADER */
 header {
-  display: flex;
-  align-items: center;
   height: 100px;
   background-color: #999;
 }
 
-header h1 {
-  margin-left: 1rem;
+header .container {
+  padding: 0 1.5rem;
+  display: flex;
+  height: inherit;
+  align-items: center;
+}
+
+header .container .logo {
   font-size: 2rem;
 }
 
-/* HEADER NAV */
-header nav {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+header .container .center-nav {
+  margin-left: 2rem;
 }
 
-header nav ul {
+header .container .right-nav {
+  margin-left: auto;
+}
+
+header .container .center-nav ul,
+header .container .right-nav ul {
   display: flex;
   list-style: none;
 }
 
-header nav ul:first-child {
-  margin-left: 1.5rem;
+header .container .center-nav li ~ li,
+header .container .right-nav li ~ li {
+  margin-left: 2rem;
 }
 
-header nav ul:last-child {
-  margin-right: 1.5rem;
-}
-
-header nav ul li a {
-  display: block;
-  padding: 1rem;
+header .container .center-nav li a,
+header .container .right-nav li a {
   font-size: 1.25rem;
 }
 
@@ -62,7 +61,7 @@ footer {
   text-align: center;
 }
 
-footer h2 {
+footer .title {
   font-size: 2rem;
 }
 
@@ -71,59 +70,74 @@ main {
   display: flex;
 }
 
-main > * {
+main > .left,
+main > .center,
+main > .right {
   padding: 1rem;
 }
 
-main h2 {
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
-}
-
-/* MAIN NAV */
-main nav {
+/* MAIN LEFT */
+main .left {
   flex: 0 0 250px;
   background-color: salmon;
 }
 
-main nav ul {
+main .left .title {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+main .left ul {
   margin-left: 1.25rem;
 }
 
-main nav ul li {
-  margin-bottom: 0.5rem;
+main .left ul li ~ li {
+  margin-top: 0.5rem;
 }
 
-/* MAIN SECTION */
-main section {
-  flex-grow: 1;
+/* MAIN CENTER */
+main .center {
   height: 800px;
   background-color: #444;
 }
 
-/* MAIN ASIDE */
-main aside {
+main .center .title {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+/* MAIN RIGHT */
+main .right {
   flex: 0 0 250px;
-  max-width: 250px;
   background-color: royalblue;
 }
 
-main aside > div:not(:last-child) {
-  margin-bottom: 1rem;
+main .right .item ~ .item {
+  margin-top: 1rem;
 }
 
+main .right .item .title {
+  margin-bottom: 0.5rem;
+}
+
+/* MEDIA QUERY */
 @media (max-width: 1024px) {
   main {
     flex-wrap: wrap;
   }
 
-  main section {
+  /* For IE 10+ */
+  main .left {
+    width: 250px;
+    flex: auto;
+  }
+
+  main .center {
     width: calc(100% - 250px);
   }
 
-  main aside {
+  main .right {
     flex: auto;
-    max-width: none;
   }
 }
 
@@ -132,30 +146,49 @@ main aside > div:not(:last-child) {
     height: auto;
   }
 
-  header h1 {
+  header .container {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  header .container .logo {
     display: none;
   }
 
-  header nav {
+  header .container .center-nav,
+  header .container .right-nav {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  header .container .center-nav ul,
+  header .container .right-nav ul {
     flex-direction: column;
   }
 
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-    margin: 0 !important;
+  header .container .center-nav ul li ~ li,
+  header .container .right-nav ul li ~ li {
+    margin-left: 0;
+  }
+
+  header .container .center-nav ul li a,
+  header .container .right-nav ul li a {
+    display: block;
+    padding: 1rem 0;
   }
 
   main {
     flex-direction: column;
   }
 
-  main nav {
-    flex: auto;
+  main .left {
+    /* Check line 130 comment */
+    width: auto;
   }
 
-  main section {
-    width: 100%;
+  main .center {
+    width: auto;
     height: auto;
   }
 }
