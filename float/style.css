@@ -3,6 +3,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #fff;
+  font-family: "Arial", sans-serif;
 }
 
 a {
@@ -10,47 +12,52 @@ a {
   text-decoration: none;
 }
 
-.container {
-  color: #fff;
-  font-family: "Arial", "Helvetica", sans-serif;
-}
-
 /* HEADER */
 header {
-  height: 100px;
   background-color: #999;
+}
+
+header .container {
+  overflow: hidden;
+  height: inherit;
+  padding: 0 1.5rem;
+}
+
+header .container .logo {
+  float: left;
+  font-size: 2rem;
   line-height: 100px;
 }
 
-header h1 {
+header .container .center-nav {
   float: left;
-  margin-left: 1rem;
-  font-size: 2rem;
+  margin-left: 2rem;
 }
 
-/* HEADER NAV */
-header nav ul {
+header .container .right-nav {
+  float: right;
+}
+
+header .container .center-nav ul,
+header .container .right-nav ul {
+  overflow: hidden;
   list-style: none;
 }
 
-header nav ul:first-child {
+header .container .center-nav li,
+header .container .right-nav li {
   float: left;
-  margin-left: 1.5rem;
+  height: 100px;
+  line-height: 100px;
 }
 
-header nav ul:last-child {
-  float: right;
-  margin-right: 1.5rem;
+header .container .center-nav li ~ li,
+header .container .right-nav li ~ li {
+  margin-left: 2rem;
 }
 
-header nav ul li {
-  display: inline-block;
-}
-
-header nav ul li a {
-  /* Prevent ul, li tag from overflow height */
-  vertical-align: top;
-  padding: 1rem;
+header .container .center-nav li a,
+header .container .right-nav li a {
   font-size: 1.25rem;
 }
 
@@ -62,50 +69,59 @@ footer {
   text-align: center;
 }
 
-footer h2 {
+footer .title {
   font-size: 2rem;
 }
 
 /* MAIN */
-.main {
+main {
   position: relative;
+  display: block; /* IE */
+  overflow: hidden;
 }
 
-.main > * {
+main > .left,
+main > .center,
+main > .right {
   padding: 1rem;
 }
 
-.main h2 {
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
-}
-
-/* MAIN NAV */
-.main nav {
+/* MAIN LEFT */
+main .left {
   float: left;
   width: 250px;
   height: 800px;
   background-color: salmon;
 }
 
-.main nav ul {
+main .left .title {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+main .left ul {
   margin-left: 1.25rem;
 }
 
-.main nav ul li {
-  margin-bottom: 0.5rem;
+main .left ul li ~ li {
+  margin-top: 0.5rem;
 }
 
-/* MAIN SECTION */
-section {
+/* MAIN CENTER */
+main .center {
   overflow: hidden;
   height: 800px;
   margin-right: 250px;
   background-color: #444;
 }
 
-/* MAIN ASIDE */
-aside {
+main .center .title {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+/* MAIN RIGHT */
+main .right {
   position: absolute;
   top: 0;
   right: 0;
@@ -114,61 +130,57 @@ aside {
   background-color: royalblue;
 }
 
-aside > div:not(:last-child) {
-  margin-bottom: 1rem;
+main .right .item ~ .item {
+  margin-top: 1rem;
 }
 
+main .right .item .title {
+  margin-bottom: 0.5rem;
+}
+
+/* MEDIA QUERY */
 @media (max-width: 1024px) {
-  section {
+  main .center {
     margin-right: 0;
   }
-
-  aside {
+  main .right {
     position: static;
-    width: 100%;
+    width: auto;
     height: auto;
   }
 }
 
 @media (max-width: 768px) {
-  header {
-    height: auto;
-    line-height: normal;
-  }
-
-  header h1 {
-    display: none;
-  }
-
-  header nav {
-    overflow: hidden;
-  }
-
-  header nav ul {
-    width: 100%;
-    margin: 0 !important;
-    text-align: center;
-  }
-
-  header nav ul:first-child li:first-child {
-    margin-top: 0.5rem;
-  }
-
-  header nav ul li {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  header nav ul li a {
+  header .container {
     padding: 0;
   }
-
-  .main nav {
+  header .container .logo {
+    display: none;
+  }
+  header .container .center-nav {
+    float: none;
+    margin-left: 0;
+  }
+  header .container .right-nav {
+    float: none;
+  }
+  header .container .center-nav ul li,
+  header .container .right-nav ul li {
+    float: none;
+    height: auto;
+    padding: 1rem 0;
+    line-height: normal;
+    text-align: center;
+  }
+  header .container .center-nav ul li ~ li,
+  header .container .right-nav ul li ~ li {
+    margin-left: 0;
+  }
+  main .left {
     width: 100%;
     height: auto;
   }
-
-  .main section {
+  main .center {
     height: auto;
   }
 }
