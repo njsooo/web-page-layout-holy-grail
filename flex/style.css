@@ -19,10 +19,10 @@ header {
 }
 
 header .container {
-  padding: 0 1.5rem;
   display: flex;
-  height: inherit;
   align-items: center;
+  height: inherit;
+  padding: 0 1.5rem;
 }
 
 header .container .logo {
@@ -128,14 +128,12 @@ main .right .item .title {
 
   /* For IE 10+ */
   main .left {
-    width: 250px;
     flex: auto;
+    width: 250px;
   }
-
   main .center {
     width: calc(100% - 250px);
   }
-
   main .right {
     flex: auto;
   }
@@ -145,48 +143,39 @@ main .right .item .title {
   header {
     height: auto;
   }
-
   header .container {
-    padding: 0;
     flex-direction: column;
+    padding: 0;
   }
-
   header .container .logo {
     display: none;
   }
-
   header .container .center-nav,
   header .container .right-nav {
-    margin-left: 0;
     width: 100%;
+    margin-left: 0;
     text-align: center;
   }
-
   header .container .center-nav ul,
   header .container .right-nav ul {
     flex-direction: column;
   }
-
   header .container .center-nav ul li ~ li,
   header .container .right-nav ul li ~ li {
     margin-left: 0;
   }
-
   header .container .center-nav ul li a,
   header .container .right-nav ul li a {
     display: block;
     padding: 1rem 0;
   }
-
   main {
     flex-direction: column;
   }
-
   main .left {
     /* Check line 130 comment */
     width: auto;
   }
-
   main .center {
     width: auto;
     height: auto;
