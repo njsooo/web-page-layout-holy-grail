@@ -79,6 +79,8 @@ main > .right {
 /* MAIN LEFT */
 main .left {
   flex: 0 0 250px;
+  width: 250px; /* IE */
+  max-width: 250px; /* IE */
   background-color: salmon;
 }
 
@@ -109,6 +111,8 @@ main .center .title {
 /* MAIN RIGHT */
 main .right {
   flex: 0 0 250px;
+  width: 250px; /* IE */
+  max-width: 250px; /* IE */
   background-color: royalblue;
 }
 
@@ -125,17 +129,18 @@ main .right .item .title {
   main {
     flex-wrap: wrap;
   }
-
-  /* For IE 10+ */
   main .left {
     flex: auto;
     width: 250px;
+    max-width: none;
   }
   main .center {
     width: calc(100% - 250px);
   }
   main .right {
     flex: auto;
+    width: 100%;
+    max-width: none;
   }
 }
 
@@ -173,7 +178,6 @@ main .right .item .title {
     flex-direction: column;
   }
   main .left {
-    /* Check line 130 comment */
     width: auto;
   }
   main .center {
